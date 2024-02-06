@@ -26,7 +26,7 @@ test.describe('Login Tests', ()=>{
         await page.getByRole('button', { name: 'Open Menu' }).click();
         await page.getByRole('link', { name: 'Logout' }).click(); 
         
-        expect(page.url()).toBe('https://www.saucedemo.com/');
+        expect(page.url()).toBe('https://www.sauced');
       
     });
 });

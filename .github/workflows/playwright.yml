@@ -34,5 +34,5 @@ jobs:
           path: playwright-report/
           retention-days: 30
       - name: Reverter commit se falhar
-        uses: github-actions/revert-commit@v1
+        uses: action-pack/cancel@v1
         if: ${{ failure() }}

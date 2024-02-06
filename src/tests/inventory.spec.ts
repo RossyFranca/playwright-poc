@@ -12,7 +12,7 @@ test.describe('Inventory Tests', ()=>{
 
     test('select products from inventory', async ({page})=>{
 
-        console.log('teste hml')
+        console.log('De fAlha')
 
     });
 

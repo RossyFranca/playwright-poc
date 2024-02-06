@@ -14,7 +14,7 @@ class LoginPage {
 
 
 async gotoLoginPage(){
-    await this.page.goto('https://www.saucedemo.com/');
+    await this.page.goo('https://www.saucedemo.com/');
 }
 async login(user: object = {}){
 

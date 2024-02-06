@@ -1,15 +1,19 @@
 name: Playwright Tests
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    env:
-      PLAYWRIGHT_HEADLESS: 1
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [chromium, firefox, webkit]  # Adicione os navegadores desejados
+        shardIndex: [1, 2, 3, 4]  # Ajuste o número de shards conforme necessário
+        shardTotal: [4]  # Corresponda ao número de shards
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -20,10 +24,10 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npx playwright test --project=${{ matrix.project }} --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
     - uses: actions/upload-artifact@v3
       if: always()
       with:
-        name: playwright-report
+        name: playwright-report-${{ matrix.project }}-${{ matrix.shardIndex }}
         path: playwright-report/
         retention-days: 30

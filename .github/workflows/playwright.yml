@@ -33,6 +33,6 @@ jobs:
           name: playwright-report-${{ matrix.project }}-${{ matrix.shardIndex }}
           path: playwright-report/
           retention-days: 30
-      - name: Cancelar workflow se o teste falhar
-        uses: action-pack/cancel@v1
+      - name: Reverter commit se falhar
+        uses: github-actions/revert-commit@v1
         if: ${{ failure() }}

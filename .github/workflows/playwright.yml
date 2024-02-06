@@ -34,5 +34,5 @@ jobs:
           path: playwright-report/
           retention-days: 30
       - name: Cancelar workflow se o teste falhar
-        uses: actions/cancel-workflow@v3
+        uses: styfle/cancel-workflow-action@master
         if: ${{ failure() }}

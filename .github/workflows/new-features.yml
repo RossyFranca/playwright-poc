@@ -1,8 +1,8 @@
-name: CI develop
+name: New features
 
 on:
-  pull_request: 
-    branches: [develop]
+  push:
+    branches: [feature-*]
 
 jobs:
     continuous-integration:
@@ -18,14 +18,6 @@ jobs:
               run: npx playwright install --with-deps
             - name: Run Playwright tests
               run: npx playwright test
-            - name: Aprovar ou Rejeitar Pull Request
-              run: |
-                if [ $? -eq 0 ]; then
-                  echo "Testes e build bem-sucedidos!"
-                else
-                  echo "Testes ou build falhou. Rejeitando o pull request."
-                  exit 1
-                fi  
             
 
 

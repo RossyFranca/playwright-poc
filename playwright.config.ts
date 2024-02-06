@@ -30,7 +30,7 @@ export default defineConfig({
     trace: 'on-first-retry',
 
     //TODO: encontrar modo de deixar o headless sempre true no pipeline
-    headless: false,
+    headless: true,
     launchOptions:{
       slowMo: 300
     },

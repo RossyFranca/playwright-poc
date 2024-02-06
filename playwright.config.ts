@@ -28,6 +28,8 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    //TODO: encontrar modo de deixar o headless sempre true no pipeline
     headless: true,
     launchOptions:{
       slowMo: 300

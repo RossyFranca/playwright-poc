@@ -1,9 +1,5 @@
 import {expect, test} from '@playwright/test';
 import { LoginPage } from '../pages/loginpage';
-import { Page } from '@playwright/test';
-
-
-
 
 test.describe('Inventory Tests', ()=>{
   
@@ -13,7 +9,6 @@ test.describe('Inventory Tests', ()=>{
         await loginpage.login();
     
     })
-
 
     test('select products from inventory', async ({page})=>{
 

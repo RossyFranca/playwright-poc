@@ -43,7 +43,7 @@ test.describe('Login Tests', ()=>{
         expect(message_error).toBe("Epic sadface: Username and password do not match any user in this service");
 
     });
-    test.only('Wrong user', async({page})=>{
+    test('Wrong user', async({page})=>{
 
         await page.locator('[data-test="username"]').fill('wrong_user');
         await page.locator('[data-test="password"]').fill('secret_sauce');

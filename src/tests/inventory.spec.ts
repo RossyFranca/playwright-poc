@@ -12,8 +12,6 @@ test.describe('Inventory Tests', ()=>{
 
     test('select products from inventory @inventory', async ({page})=>{
 
-        console.log('De fAlha')
-
     });
 
 });

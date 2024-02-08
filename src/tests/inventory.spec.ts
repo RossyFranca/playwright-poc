@@ -10,7 +10,7 @@ test.describe('Inventory Tests', ()=>{
     
     })
 
-    test('select products from inventory', async ({page})=>{
+    test('select products from inventory @inventory', async ({page})=>{
 
         console.log('De fAlha')
 

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 
 test.describe('Login Tests', ()=>{
-    test('login with success', async ({page})=>{
+    test('login with success @smoke', async ({page})=>{
 
         await page.goto('https://www.saucedemo.com/');
     
@@ -15,7 +15,7 @@ test.describe('Login Tests', ()=>{
     
     });
     
-    test('logout', async({page})=>{
+    test('logout @smoke', async({page})=>{
     
         await page.goto('https://www.saucedemo.com/');
         await page.locator('[data-test="username"]').fill('standard_user');
